@@ -13,6 +13,14 @@ export class alcoholicDrink implements Drink{
         imgThumb = this.imgThumb;
         created = this.created;
     }
+
+    static adapt(item: any): alcoholicDrink {
+        return new alcoholicDrink(
+          item.strDrink,
+          item.strDrinkThumb,
+          Date.now()
+        );
+      }
 }
 
 

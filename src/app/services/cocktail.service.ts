@@ -15,9 +15,11 @@ export class CocktailService {
 
   constructor(private http: HttpClient) {}
 
-   public getAlcoholiCocktails(): Observable<Drink[]>  {
-    return this.http.get<Drink[]>(this.endpoint + "filter.php?a=Alcoholic");
-   }
+   public getAlcoholicCocktails(): Observable<any>  {
+    return this.http.get<any>(this.endpoint + "filter.php?c=Cocktail").pipe(
+      map(data => {data = data.drinks; return data;}
+    ))}
+   
 
 
 }

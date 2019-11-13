@@ -9,15 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cocktail-list.component.scss']
 })
 export class CocktailListComponent implements OnInit {
-  cocktailList: alcoholicDrink[];
+  cocktailList: alcoholicDrink[] = [];
   constructor(private cocktailSvc: CocktailService) {}
 
   ngOnInit() {
-    this.cocktailSvc.getAlcoholiCocktails().subscribe( res => {
-      this.cocktailList = res;
+    this.cocktailSvc.getAlcoholicCocktails().subscribe( res => {
+      this.cocktailList  = res; 
       console.log(this.cocktailList);
-      
     } )
+  }
+
+  converFromApi(name: String, thumb: String){
+    let newDrink = new alcoholicDrink(name, thumb, Date.now());
+    return newDrink;
   }
 
 }

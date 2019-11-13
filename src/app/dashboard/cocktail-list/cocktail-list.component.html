@@ -1,1 +1,3 @@
-<p>cocktail-list works!</p>
+<p>cocktail-list works!</p><ul *ngFor="let cocktail of cocktailList">
+    <li>{{cocktail.strDrink}} | {{ cocktail.idDrink}}</li>
+</ul>
