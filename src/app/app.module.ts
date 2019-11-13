@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardShellComponent } from './dashboard-shell/dashboard-shell.component';
+import { CocktailListComponent } from './dashboard/cocktail-list/cocktail-list.component';
 
 const routes: Routes = [
   { path: '', component: DashboardShellComponent, pathMatch: "full" }
@@ -18,7 +19,8 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardShellComponent
+    DashboardShellComponent,
+    CocktailListComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

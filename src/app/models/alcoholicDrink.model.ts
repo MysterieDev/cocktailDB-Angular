@@ -1,21 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Adapter } from '../common/adapter';
+import { Drink } from './Drink.model';
 
-export class alcoholicDrink{
+export class alcoholicDrink implements Drink{
+    name: String;
+    imgThumb: String;
+    created: number
     constructor(
         name: String,
         imgThumb: String,
         created: number
-    ){}
-}
-
-export class alcoholicDrinkAdapter implements Adapter<alcoholicDrink>{
-
-    adapt(item:any): alcoholicDrink {
-        return new alcoholicDrink(
-            item.strDrink,
-            item.strDrinkThumb,
-            Date.now()
-        );
+    ){
+        name = this.name;
+        imgThumb = this.imgThumb;
+        created = this.created;
     }
 }
+
+

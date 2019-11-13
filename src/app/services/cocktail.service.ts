@@ -1,4 +1,5 @@
-import { alcoholicDrink, alcoholicDrinkAdapter } from './../models/alcoholicDrink.model';
+import { Drink } from './../models/Drink.model';
+import { alcoholicDrink } from './../models/alcoholicDrink.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,15 +12,12 @@ export class CocktailService {
 
 
   readonly endpoint: String = "https://www.thecocktaildb.com/api/json/v1/1/";
-  private alcoholicCocktails:alcoholicDrink[];
 
-  constructor(private http: HttpClient, private adapter: alcoholicDrinkAdapter) {}
+  constructor(private http: HttpClient) {}
 
-   public getAlcoholiCocktails(): Observable<alcoholicDrink>  {
-    return this.http.get(this.endpoint + "filter.php?a=Alcoholic").pipe(
-      map((data: any[]) => data.map(item => this.adapter.adapt(item))));
-  } 
-
+   public getAlcoholiCocktails(): Observable<Drink[]>  {
+    return this.http.get<Drink[]>(this.endpoint + "filter.php?a=Alcoholic");
+   }
 
 
 }
