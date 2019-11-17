@@ -1,1 +1,72 @@
-<p>cocktail-detail works!</p>
+<p *ngIf="!singleCocktail">
+  Wähle einen Cocktail in der Liste aus :-)
+</p>
+
+<div *ngIf="singleCocktail" class="ui placeholder segment">
+  <h2 style="text-align: center;">{{ singleCocktail.name }}</h2>
+  <img class="ui medium centered image" [src]="singleCocktail.imgThumb" />
+  <p class="ui segment" *ngIf="singleCocktail.instructions">
+    {{ singleCocktail.instructions }}
+  </p>
+
+  <div class="ui segment">
+    <div class="ui list">
+      <div *ngIf="singleCocktail.ingredient1">
+        {{ singleCocktail.ingredient1 }}
+        <span *ngIf="singleCocktail.measure1">
+          |
+          {{ singleCocktail.measure1 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient2">
+        {{ singleCocktail.ingredient2 }}
+        <span *ngIf="singleCocktail.measure2">
+          |
+          {{ singleCocktail.measure2 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient3">
+        {{ singleCocktail.ingredient3 }}
+        <span *ngIf="singleCocktail.measure3">
+          |
+          {{ singleCocktail.measure3 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient4">
+        {{ singleCocktail.ingredient4 }}
+        <span *ngIf="singleCocktail.measure4">
+          |
+          {{ singleCocktail.measure4 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient5">
+        {{ singleCocktail.ingredient5 }}
+        <span *ngIf="singleCocktail.measure5">
+          |
+          {{ singleCocktail.measure5 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient6">
+        {{ singleCocktail.ingredient6 }}
+        <span *ngIf="singleCocktail.measure6">
+          |
+          {{ singleCocktail.measure6 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient7">
+        {{ singleCocktail.ingredient7 }}
+        <span *ngIf="singleCocktail.measure7">
+          |
+          {{ singleCocktail.measure7 }}</span
+        >
+      </div>
+      <div *ngIf="singleCocktail.ingredient8">
+        {{ singleCocktail.ingredient8 }}
+        <span *ngIf="singleCocktail.measure8">
+          |
+          {{ singleCocktail.measure8 }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
