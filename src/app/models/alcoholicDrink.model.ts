@@ -3,23 +3,27 @@ import { Drink } from './Drink.model';
 export class alcoholicDrink implements Drink{
     name: String;
     imgThumb: String;
-    created: number
+    id: String;
     constructor(
         name: String,
         imgThumb: String,
-        created: number
+        id: String
     ){
-        name = this.name;
-        imgThumb = this.imgThumb;
-        created = this.created;
+      this.name  = name;
+      this.imgThumb = imgThumb;
+      this.id = id;
     }
 
     static adapt(item: any): alcoholicDrink {
         return new alcoholicDrink(
           item.strDrink,
           item.strDrinkThumb,
-          Date.now()
+          item.idDrink
         );
+      }
+
+      getfullName(){
+        return this.name;
       }
 }
 

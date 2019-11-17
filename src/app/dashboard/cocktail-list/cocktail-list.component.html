@@ -1,3 +1,6 @@
-<p>cocktail-list works!</p><ul *ngFor="let cocktail of cocktailList">
-    <li>{{cocktail.strDrink}} | {{ cocktail.idDrink}}</li>
+<ul *ngFor="let cocktail of cocktailList">
+    <li class="ui segment">
+        <img [src]="cocktail.imgThumb" class="ui avatar image">
+        <span>{{cocktail.name}}</span>
+    </li>
 </ul>

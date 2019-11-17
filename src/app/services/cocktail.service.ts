@@ -10,16 +10,21 @@ import { map } from 'rxjs/operators';
 })
 export class CocktailService {
 
+  constructor(private http: HttpClient) {}
 
   readonly endpoint: String = "https://www.thecocktaildb.com/api/json/v1/1/";
 
-  constructor(private http: HttpClient) {}
 
-   public getAlcoholicCocktails(): Observable<any>  {
-    return this.http.get<any>(this.endpoint + "filter.php?c=Cocktail").pipe(
-      map(data => {data = data.drinks; return data;}
-    ))}
+
+    getAlcoholicCocktails():  Observable<alcoholicDrink[]>{
+    return this.http.get(this.endpoint+"filter.php?c=Cocktail").pipe(
+      map(
+        (data: any) => 
+          data.drinks.map(
+          alcoholicDrink.adapt
+        )
+      )
+    )
+  }
+    }
    
-
-
-}
