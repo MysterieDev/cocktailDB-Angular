@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardShellComponent } from './dashboard-shell/dashboard-shell.component';
 import { CocktailListComponent } from './dashboard/cocktail-list/cocktail-list.component';
+import { CocktailDetailComponent } from './dashboard/cocktail-detail/cocktail-detail.component';
 
 const routes: Routes = [
   { path: '', component: DashboardShellComponent, pathMatch: "full" }
@@ -20,7 +21,8 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     DashboardShellComponent,
-    CocktailListComponent
+    CocktailListComponent,
+    CocktailDetailComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

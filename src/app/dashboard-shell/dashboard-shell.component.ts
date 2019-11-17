@@ -1,3 +1,4 @@
+import { alcoholicDrink } from './../models/alcoholicDrink.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardShellComponent implements OnInit {
   firstWelcome: boolean = true;
+  singleCocktail: alcoholicDrink;
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +17,11 @@ export class DashboardShellComponent implements OnInit {
   private clickedFirstWelcome(){
     console.log("click");
     this.firstWelcome = false;
+  }
+
+  getAlcoholicCocktail(id: String){
+    console.log("clicked" + id );
+    /* this.cocktailSingle = this.cocktailSvc.getAlcoholicCocktail(id); */
   }
 
 }

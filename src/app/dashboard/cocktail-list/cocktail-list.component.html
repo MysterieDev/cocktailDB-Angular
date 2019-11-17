@@ -1,5 +1,5 @@
 <ul *ngFor="let cocktail of cocktailList">
-    <li class="ui segment">
+    <li class="ui segment" (click)="cocktailDetail(cocktail.id)">
         <img [src]="cocktail.imgThumb" class="ui avatar image">
         <span>{{cocktail.name}}</span>
     </li>

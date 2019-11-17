@@ -1,8 +1,8 @@
 import { Drink } from './../models/Drink.model';
 import { alcoholicDrink } from './../models/alcoholicDrink.model';
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject, BehaviorSubject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -10,10 +10,11 @@ import { map } from 'rxjs/operators';
 })
 export class CocktailService {
 
+  cocktailSubject = new Subject<alcoholicDrink>();
+
   constructor(private http: HttpClient) {}
 
   readonly endpoint: String = "https://www.thecocktaildb.com/api/json/v1/1/";
-
 
 
     getAlcoholicCocktails():  Observable<alcoholicDrink[]>{
@@ -26,5 +27,17 @@ export class CocktailService {
       )
     )
   }
+
+    getAlcoholicCocktail(id: String){
+      this.http.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007").pipe(
+        map(
+          (data: any) => data.drinks.map(
+            alcoholicDrink.adapt
+          )
+        )
+      ).subscribe(
+        res => { this.cocktailSubject.next(res) }
+      )
     }
-   
+    
+  }
