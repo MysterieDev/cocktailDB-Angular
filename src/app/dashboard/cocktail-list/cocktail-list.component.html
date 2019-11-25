@@ -1,6 +1,16 @@
-<ul *ngFor="let cocktail of cocktailList">
-    <li class="ui segment" (click)="cocktailDetail(cocktail.id)">
-        <img [src]="cocktail.imgThumb" class="ui avatar image">
-        <span>{{cocktail.name}}</span>
-    </li>
-</ul>
+<div class="ui inverted segment cocktail-item-list">
+  <div class="ui inverted relaxed divided list">
+    <div
+      class="item"
+      *ngFor="let cocktail of cocktailList"
+      (click)="cocktailDetail(cocktail.id)"
+    >
+      <div class="content">
+        <div class="header">
+          <img [src]="cocktail.imgThumb" class="ui avatar image" />
+          <span>{{ cocktail.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

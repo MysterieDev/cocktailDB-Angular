@@ -1,5 +1,40 @@
-<div class="ui menu stackable">
-  <div class="header item">
-    Cocktails Madness
+<div class="ui vertical menu">
+  <div class="item">
+    <img
+      src="https://image.freepik.com/free-vector/hand-drawn-cocktail-collection_23-2147825326.jpg"
+    />
   </div>
+  <div class="item">
+    <div class="ui input"><input type="text" placeholder="Search..." /></div>
+  </div>
+  <div class="item">
+    Home
+    <div class="menu">
+      <a class="active item">Search</a>
+      <a class="item">Add</a>
+      <a class="item">Remove</a>
+    </div>
+  </div>
+  <a class="item"> <i class="grid layout icon"></i> Browse </a>
+  <a class="item">
+    Messages
+  </a>
+  <div class="ui dropdown item">
+    More
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item"><i class="edit icon"></i> Edit Profile</a>
+      <a class="item"><i class="globe icon"></i> Choose Language</a>
+      <a class="item"><i class="settings icon"></i> Account Settings</a>
+    </div>
+  </div>
+</div>
+
+<!--message-->
+<div class="ui positive message" *ngIf="firstWelcome">
+  <i class="close icon" (click)="clickedFirstWelcome()"></i>
+  <div class="header">
+    Die Ressource für Deine Cocktails
+  </div>
+  <p>Werde zum Meister an der Bar.</p>
 </div>

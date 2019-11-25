@@ -1,15 +1,17 @@
 <p *ngIf="!singleCocktail">
   Wähle einen Cocktail in der Liste aus :-)
 </p>
-
-<div *ngIf="singleCocktail" class="ui placeholder segment">
-  <h2 style="text-align: center;">{{ singleCocktail.name }}</h2>
-  <img class="ui medium centered image" [src]="singleCocktail.imgThumb" />
-  <p class="ui segment" *ngIf="singleCocktail.instructions">
-    {{ singleCocktail.instructions }}
-  </p>
-
-  <div class="ui segment">
+<div class="ui card" *ngIf="singleCocktail">
+  <div class="image">
+    <img [src]="singleCocktail.imgThumb" />
+  </div>
+  <div class="content">
+    <a class="header">{{ singleCocktail.name }}</a>
+    <div class="description">
+      {{ singleCocktail.instructions }}
+    </div>
+  </div>
+  <div class="extra content">
     <div class="ui list">
       <div *ngIf="singleCocktail.ingredient1">
         {{ singleCocktail.ingredient1 }}

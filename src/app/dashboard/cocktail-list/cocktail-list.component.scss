@@ -1,5 +1,8 @@
-ul>li {
-  list-style-type: none;
-  font-weight: bold;
+.item {
   cursor: pointer;
+}
+
+.cocktail-item-list {
+  max-height: 400px;
+  overflow-y: scroll;
 }
