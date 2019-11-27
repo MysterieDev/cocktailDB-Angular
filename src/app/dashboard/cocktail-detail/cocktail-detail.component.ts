@@ -1,5 +1,5 @@
-import { Subscription} from "rxjs";
-import { alcoholicDrink } from "./../../models/alcoholicDrink.model";
+import { Subscription } from "rxjs";
+import { Cocktail } from "./../../models/Cocktail.model";
 import { CocktailService } from "./../../services/cocktail.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 })
 export class CocktailDetailComponent implements OnInit, OnDestroy {
   cocktailDetailSub: Subscription;
-  singleCocktail: alcoholicDrink;
+  singleCocktail: Cocktail;
 
   constructor(private cocktailSvc: CocktailService) {}
 

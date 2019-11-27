@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardShellComponent } from './dashboard-shell/dashboard-shell.component';
 import { CocktailListComponent } from './dashboard/cocktail-list/cocktail-list.component';
 import { CocktailDetailComponent } from './dashboard/cocktail-detail/cocktail-detail.component';
+import { SearchComponent } from './header/search/search.component';
+import { ClickedOutsideDirective } from './directives/clicked-outside.directive';
 
 const routes: Routes = [
   { path: '', component: DashboardShellComponent, pathMatch: "full" }
@@ -22,7 +24,9 @@ const routes: Routes = [
     FooterComponent,
     DashboardShellComponent,
     CocktailListComponent,
-    CocktailDetailComponent
+    CocktailDetailComponent,
+    SearchComponent,
+    ClickedOutsideDirective
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -32,6 +36,6 @@ const routes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [RouterModule]
+  exports: [RouterModule, ClickedOutsideDirective]
 })
 export class AppModule { }

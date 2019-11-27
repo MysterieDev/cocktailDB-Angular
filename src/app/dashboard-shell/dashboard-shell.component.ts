@@ -1,4 +1,4 @@
-import { alcoholicDrink } from "./../models/alcoholicDrink.model";
+import { Cocktail } from "./../models/Cocktail.model";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dashboard-shell.component.scss"]
 })
 export class DashboardShellComponent implements OnInit {
-  singleCocktail: alcoholicDrink;
+  singleCocktail: Cocktail;
   constructor() {}
 
   ngOnInit() {}
