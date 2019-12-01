@@ -18,6 +18,7 @@ import {
 export class SearchComponent implements OnInit {
   keyUp$ = new Subject<String>();
   isLoading = false;
+  visible: boolean;
   foundDrinks: Cocktail[] = [];
   constructor(private cocktailSvc: CocktailService) {}
 
@@ -32,6 +33,7 @@ export class SearchComponent implements OnInit {
         tap(() => (this.isLoading = false))
       )
       .subscribe(drinks => {
+        this.visible = true;
         console.log(drinks);
         this.foundDrinks = drinks;
         console.log(this.foundDrinks);
@@ -41,5 +43,9 @@ export class SearchComponent implements OnInit {
   getCocktailFromSearch(id: String) {
     console.log(id);
     this.cocktailSvc.getSearchedCocktail(id);
+  }
+
+  closeResults(close: boolean) {
+    this.visible = false;
   }
 }

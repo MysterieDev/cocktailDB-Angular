@@ -13,7 +13,7 @@ export class ClickedOutsideDirective {
   constructor(private _elementRef: ElementRef) {}
 
   @Output()
-  public clickOutside = new EventEmitter();
+  public closeSearchResult = new EventEmitter();
 
   @HostListener("document:click", ["$event.target"])
   public onClick(targetElement) {
@@ -21,7 +21,7 @@ export class ClickedOutsideDirective {
       targetElement
     );
     if (!clickedInside) {
-      console.log("clicked outside");
+      this.closeSearchResult.emit(false);
     }
   }
 }
