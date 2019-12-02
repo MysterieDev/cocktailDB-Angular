@@ -16,7 +16,7 @@ import {
   styleUrls: ["./search.component.scss"]
 })
 export class SearchComponent implements OnInit {
-  keyUp$ = new Subject<String>();
+  keyUp$ = new Subject<string>();
   isLoading = false;
   visible: boolean;
   foundDrinks: Cocktail[] = [];
@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit {
       });
   }
 
-  getCocktailFromSearch(id: String) {
+  getCocktailFromSearch(id: string) {
     console.log(id);
     this.cocktailSvc.getSearchedCocktail(id);
   }

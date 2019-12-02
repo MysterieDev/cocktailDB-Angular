@@ -23,4 +23,15 @@
       <p class="description">{{ drink.instructions }}</p>
     </a>
   </div>
+
+  <div
+    class="results transition visible"
+    *ngIf="foundDrinks.length === 0 && visible"
+    appClickedOutside
+    (closeSearchResult)="closeResults($e)"
+  >
+    <a class="result">
+      Keine Ergebnisse
+    </a>
+  </div>
 </div>

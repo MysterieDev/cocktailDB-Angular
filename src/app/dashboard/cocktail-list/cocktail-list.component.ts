@@ -20,7 +20,7 @@ export class CocktailListComponent implements OnInit {
     });
   }
 
-  cocktailDetail(id: String) {
+  cocktailDetail(id: string) {
     console.log(id);
     this.cocktailSvc.getAlcoholicCocktail(id);
   }
